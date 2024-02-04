@@ -1,0 +1,31 @@
+
+
+import { Separator } from '@/components/ui/separator';
+import React, { FC, ReactNode } from 'react';
+
+
+interface FieldInputProps {
+    children: ReactNode,
+    title:string;
+    subtitle:string
+}
+
+
+const FieldInput: FC<FieldInputProps> = ({ children,subtitle,title}) => {
+  return (
+    <>
+        <div className='flex flex-row items-start'>
+            <div className='w-[35%]'>
+                <div className='font-semibold'>{title}</div>
+                <div className='text-gray-400 w-60'>{subtitle}</div>
+            </div>
+            <div>
+                {children}
+            </div>
+        </div>
+        <Separator/>
+    </>
+  )
+}
+
+export default FieldInput;
