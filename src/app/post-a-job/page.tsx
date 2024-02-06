@@ -19,6 +19,8 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import InputSkills from '@/components/organism/InputSkills';
+import { CATEGORIES } from '@/constants/categories';
 
 
 interface PostJobPageProps {
@@ -142,15 +144,20 @@ const onSubmit = (val: z.infer<typeof jobFormSchema>) => {
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <SelectItem value="m@example.com">m@example.com</SelectItem>
-                                    <SelectItem value="m@google.com">m@google.com</SelectItem>
-                                    <SelectItem value="m@support.com">m@support.com</SelectItem>
+                                {CATEGORIES.map((item: string,i:number) => (
+                                    <SelectItem key={item + i} value={item}>{item}</SelectItem>
+                                ))}
+                                    
                                 </SelectContent>
                             </Select>
                             <FormMessage />
                         </FormItem>
                     )}
                     />
+                </FieldInput>
+
+                <FieldInput title='Required skills' subtitle='Add required skills for the job'>
+                    <InputSkills form={form} />
                 </FieldInput>
                 
             </form>
