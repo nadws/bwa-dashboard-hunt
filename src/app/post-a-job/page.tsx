@@ -240,7 +240,7 @@ const PostJobPage: FC<PostJobPageProps> = ({}) => {
           >
             <CKEditor
               form={form}
-              name="niceToHaves"
+              name="niceToHave"
               editorLoaded={editorLoaded}
             />
           </FieldInput>
