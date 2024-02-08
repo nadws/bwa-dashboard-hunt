@@ -136,7 +136,12 @@ const PostJobPage: FC<PostJobPageProps> = ({}) => {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input className="w-full" placeholder="$100" {...field} />
+                      <Input
+                        type="number"
+                        className="w-full"
+                        placeholder="$100"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -150,6 +155,7 @@ const PostJobPage: FC<PostJobPageProps> = ({}) => {
                   <FormItem>
                     <FormControl>
                       <Input
+                        type="number"
                         className="w-full"
                         placeholder="$1000"
                         {...field}
